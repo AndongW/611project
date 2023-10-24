@@ -11,6 +11,7 @@ RUN current_uid=$(id -u rstudio) && \
         chown -R rstudio:rstudio /home/rstudio; \
     fi
 
+# HW2 Tasks
 RUN apt update && apt install -y man-db && rm -rf /var/lib/apt/lists/*
 RUN yes | unminimize
 
