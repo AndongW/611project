@@ -2,8 +2,8 @@
 library(tidyverse)
 
 # Read raw data
-rev1 <- read_csv("./work/source_data/albums/album_reviews/train.csv")
-rev2 <- read_csv("./work/source_data/albums/album_reviews/test.csv")
+rev1 <- read_csv("./source_data/albums/album_reviews/train.csv")
+rev2 <- read_csv("./source_data/albums/album_reviews/test.csv")
 
 # Prep for pivot
 rev <- rbind(rev1, rev2)
@@ -19,4 +19,4 @@ colnames(rev_piv) <- make.names(colnames(rev_piv))
 
 # Export data
 rev_export <- rev_piv
-write_csv(rev_export,"./work/data/album_rev.csv")
+write_csv(rev_export,"./data/album_rev.csv")

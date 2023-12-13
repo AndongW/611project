@@ -2,7 +2,7 @@
 library(tidyverse)
 
 # Read raw ratings data
-rate <- read_csv("./work/source_data/albums/album_ratings.csv")
+rate <- read_csv("./source_data/albums/album_ratings.csv")
 
 # Remove the all duplicated entries (same artist + title)
 rate_AT <- rate %>%
@@ -56,6 +56,6 @@ rate_score <- rate_nona %>%
 
 # Export data
 rate_export <- rate_score
-write_csv(rate_export,"./work/data/album_rate.csv")
+write_csv(rate_export,"./data/album_rate.csv")
 
 

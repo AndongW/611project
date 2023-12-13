@@ -3,7 +3,7 @@ library(tidyverse)
 library(ggpubr)
 
 # Read data 
-albums <- read_csv("./work/data/album.csv")
+albums <- read_csv("./data/album.csv")
 
 # Split data
 rate_pop <- albums %>%
@@ -230,4 +230,4 @@ p0
 
 # Combine plots in one grid
 p_grid2 <- ggarrange(p7,p9,p8,p0, ncol = 2,nrow = 2,common.legend = TRUE, legend="bottom")
-ggsave("./work/figures/criticuser.png",plot =p_grid2, width = 14, height = 10)
+ggsave("./figures/criticuser.png",plot =p_grid2, width = 14, height = 10)

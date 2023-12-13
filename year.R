@@ -4,7 +4,7 @@ library(ggpubr)
 
 
 # Read data
-albums <- read_csv("./work/data/album.csv")
+albums <- read_csv("./data/album.csv")
 
 # Make composite score based on all scores
 composite_score <- rowMeans(albums[, 20:152], na.rm = TRUE)
@@ -88,5 +88,5 @@ ph2 <- ggplot(df2,aes(y=`Release Month`,x=`Release Day`,fill=n)) +
   theme(panel.background = element_blank())
 
 # Export heatmaps
-ggsave("./work/figures/popheat.png",plot =ph1, width = 10, height = 4)
-ggsave("./work/figures/rockheat.png",plot =ph2, width = 10, height = 4)
+ggsave("./figures/popheat.png",plot =ph1, width = 10, height = 4)
+ggsave("./figures/rockheat.png",plot =ph2, width = 10, height = 4)

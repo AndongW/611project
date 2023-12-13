@@ -2,8 +2,8 @@
 library(tidyverse)
 
 # Read data
-rate <- read_csv("./work/data/album_rate.csv")
-rev <- read_csv("./work/data/album_rev.csv")
+rate <- read_csv("./data/album_rate.csv")
+rev <- read_csv("./data/album_rev.csv")
 
 # Merge/join the two datasets based on artist+title
 rate_merge <- rate %>%
@@ -15,4 +15,4 @@ albums <-  inner_join(rate_merge,rev_merge, by = "AT") %>%
   select(-AT)
 
 # Export data
-write_csv(albums,"./work/data/album.csv")
+write_csv(albums,"./data/album.csv")
