@@ -230,4 +230,4 @@ p0
 
 # Combine plots in one grid
 p_grid2 <- ggarrange(p7,p9,p8,p0, ncol = 2,nrow = 2,common.legend = TRUE, legend="bottom")
-ggsave("./work/figures/criticuser.png",plot =p_grid1, width = 14, height = 10)
+ggsave("./work/figures/criticuser.png",plot =p_grid2, width = 14, height = 10)
