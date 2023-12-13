@@ -2,7 +2,7 @@
 library(tidyverse)
 
 # Read raw ratings data
-rate <- read_csv("./source_data/albums/album_ratings.csv")
+rate <- read_csv("./work/source_data/albums/album_ratings.csv")
 
 # Remove the all duplicated entries (same artist + title)
 rate_AT <- rate %>%
@@ -29,7 +29,32 @@ table(rate_genre$genre_type)
 rate_genre$`Metacritic User Score` <-
   rate_genre$`Metacritic User Score` * 10
 
+# Manipulating the Score
+meta_aoty_cols <- colnames(rate_genre)
+meta_aoty_cols <- c(meta_aoty_cols[grepl("Meta", meta_aoty_cols)],
+                    meta_aoty_cols[grepl("AOTY", meta_aoty_cols)])
+rate_nona <-
+  rate_genre[complete.cases(rate_genre[, meta_aoty_cols]), ]
+
+rate_score <- rate_nona %>%
+  mutate(
+    meta_adj_score =
+      (
+        `Metacritic Critic Score` * `Metacritic Reviews` +
+          `Metacritic User Score` * `Metacritic User Reviews`
+      ) /
+      (`Metacritic Reviews` + `Metacritic User Reviews`)
+  ) %>%
+  mutate(
+    aoty_adj_score =
+      (
+        `AOTY Critic Score` * `AOTY Critic Reviews` +
+          `AOTY User Score` * `AOTY User Reviews`
+      ) /
+      (`AOTY Critic Reviews` + `AOTY User Reviews`)
+  )
+
 # Export data
-# write.csv(album_rate,"./data/album_rate.csv")
-# write.csv(album_rev,"./data/album_rev.csv")
+write.csv(rate_score,"./work/data/album_rate.csv")
+
 
