@@ -141,5 +141,93 @@ p6
 
 # Combine plots in one grid
 p_grid1 <- ggarrange(p1,p2,p3,p4,p5,p6,ncol = 2,nrow = 3,common.legend = TRUE, legend="bottom")
-ggsave("./work/figures/criticuser.png",plot =p_grid1, width = 14, height = 10)
+ggsave("./work/figures/poprock.png",plot =p_grid1, width = 14, height = 10)
 
+# Pop: meta critic vs user
+df_p7 <- data.frame(
+  value = c(
+    rate_pop$`Metacritic Critic Score`,
+    rate_pop$`Metacritic User Score`
+  ),
+  Reviewers = rep(c("1.Critics", "2.Users"),
+                    times = c(
+                      dim(rate_pop)[1],
+                      dim(rate_pop)[1]
+                    ))
+)
+p7 <-
+  ggplot(df_p7, aes(x = value, fill = Reviewers, color = Reviewers)) +
+  geom_density(alpha = 0.1) +
+  scale_x_continuous(name = "Score", breaks = seq(0,100,25), limits = c(0,100)) +
+  scale_y_continuous(name = "Density") + 
+  ggtitle("Pop: Metacritic Critic vs. User") +
+  theme_minimal()
+p7
+
+# Rock: meta critic vs user
+df_p8 <- data.frame(
+  value = c(
+    rate_rock$`Metacritic Critic Score`,
+    rate_rock$`Metacritic User Score`
+  ),
+  Reviewers = rep(c("1.Critics", "2.Users"),
+                  times = c(
+                    dim(rate_rock)[1],
+                    dim(rate_rock)[1]
+                  ))
+)
+p8 <-
+  ggplot(df_p8, aes(x = value, fill = Reviewers, color = Reviewers)) +
+  geom_density(alpha = 0.1) +
+  scale_x_continuous(name = "Score", breaks = seq(0,100,25), limits = c(0,100)) +
+  scale_y_continuous(name = "Density") + 
+  ggtitle("Rock: Metacritic Critic vs. User") +
+  theme_minimal()
+p8
+
+# Pop: aoty critic vs user
+df_p9 <- data.frame(
+  value = c(
+    rate_pop$`AOTY Critic Score`,
+    rate_pop$`AOTY User Score`
+  ),
+  Reviewers = rep(c("1.Critics", "2.Users"),
+                  times = c(
+                    dim(rate_pop)[1],
+                    dim(rate_pop)[1]
+                  ))
+)
+p9 <-
+  ggplot(df_p9, aes(x = value, fill = Reviewers, color = Reviewers)) +
+  geom_density(alpha = 0.1) +
+  scale_x_continuous(name = "Score", breaks = seq(0,100,25), limits = c(0,100)) +
+  scale_y_continuous(name = "Density") + 
+  ggtitle("Pop: AOTY Critic vs. User") +
+  theme_minimal()
+p9
+
+# Rock: aoty critic vs user
+
+df_p0 <- data.frame(
+  value = c(
+    rate_rock$`AOTY Critic Score`,
+    rate_rock$`AOTY User Score`
+  ),
+  Reviewers = rep(c("1.Critics", "2.Users"),
+                  times = c(
+                    dim(rate_rock)[1],
+                    dim(rate_rock)[1]
+                  ))
+)
+p0 <-
+  ggplot(df_p0, aes(x = value, fill = Reviewers, color = Reviewers)) +
+  geom_density(alpha = 0.1) +
+  scale_x_continuous(name = "Score", breaks = seq(0,100,25), limits = c(0,100)) +
+  scale_y_continuous(name = "Density") + 
+  ggtitle("Rock: AOTY Critic vs. User") +
+  theme_minimal()
+p0
+
+# Combine plots in one grid
+p_grid2 <- ggarrange(p7,p9,p8,p0, ncol = 2,nrow = 2,common.legend = TRUE, legend="bottom")
+ggsave("./work/figures/criticuser.png",plot =p_grid1, width = 14, height = 10)
