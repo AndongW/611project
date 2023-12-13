@@ -40,8 +40,8 @@ p2 <- ggplot(rock,
   theme(legend.position = "none")
 
 # Export plots
-ggsave("./work/figures/popyear.png",plot =p1, width = 8, height = 6)
-ggsave("./work/figures/rockyear.png",plot =p2, width = 8, height = 6)
+ggsave("./figures/popyear.png",plot =p1, width = 8, height = 6)
+ggsave("./figures/rockyear.png",plot =p2, width = 8, height = 6)
 
 # Pop: Heatmap for release date 
 df1 <- pop %>%

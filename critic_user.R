@@ -141,7 +141,7 @@ p6
 
 # Combine plots in one grid
 p_grid1 <- ggarrange(p1,p2,p3,p4,p5,p6,ncol = 2,nrow = 3,common.legend = TRUE, legend="bottom")
-ggsave("./work/figures/poprock.png",plot =p_grid1, width = 14, height = 10)
+ggsave("./figures/poprock.png",plot =p_grid1, width = 14, height = 10)
 
 # Pop: meta critic vs user
 df_p7 <- data.frame(
