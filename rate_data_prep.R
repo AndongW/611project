@@ -55,6 +55,6 @@ rate_score <- rate_nona %>%
   )
 
 # Export data
-write.csv(rate_score,"./work/data/album_rate.csv")
+write_csv(rate_score,"./work/data/album_rate.csv")
 
 
