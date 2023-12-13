@@ -17,3 +17,7 @@ RUN yes | unminimize
 
 # Install R Packages
 RUN Rscript -e "install.packages('tidyverse')"
+
+# Python Jupyter Lab
+RUN apt update -y && apt install -y python3-pip
+RUN pip3 install jupyter jupyterlab
