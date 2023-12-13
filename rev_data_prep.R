@@ -18,4 +18,5 @@ rev_piv <- rev_preppiv %>%
 colnames(rev_piv) <- make.names(colnames(rev_piv))
 
 # Export data
-write_csv(rev_piv,"./work/data/album_rev.csv")
+rev_export <- rev_piv
+write_csv(rev_export,"./work/data/album_rev.csv")
