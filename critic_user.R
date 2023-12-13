@@ -1,5 +1,6 @@
 # Load Libraries
 library(tidyverse)
+library(ggpubr)
 
 # Read data 
 albums <- read_csv("./work/data/album.csv")
@@ -138,4 +139,7 @@ p6 <-
   theme_minimal()
 p6
 
+# Combine plots in one grid
+p_grid1 <- ggarrange(p1,p2,p3,p4,p5,p6,ncol = 2,nrow = 3,common.legend = TRUE, legend="bottom")
+ggsave("./work/figures/criticuser.png",plot =p_grid1, width = 14, height = 10)
 
