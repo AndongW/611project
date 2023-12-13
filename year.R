@@ -36,3 +36,8 @@ p2 <- ggplot(rock,
   scale_y_continuous(name = "Composite Score", limits = c(0, 100)) +
   ggtitle("Rock: Composite Score over the Years") +
   theme(legend.position = "none")
+
+# Export plots
+ggsave("./work/figures/popyear.png",plot =p1, width = 8, height = 6)
+ggsave("./work/figures/rockyear.png",plot =p2, width = 8, height = 6)
+
