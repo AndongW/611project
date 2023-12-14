@@ -14,7 +14,11 @@ Hi! This is my BIOS611 Data Science Project. It is an analysis of album ratings/
 
 ## How to Build and Access the Docker Container
 
-Note: I built this project through BIOS VM.
+Note: I built this project through the BIOS VM. So before doing anything, I connect to my VM with the following:
+
+```
+ssh andong@bios611-18.bios.unc.edu -L 8787:localhost:8787
+```
 
 Step 1. Open your preferred Unix-shell command-line interface (switch to bash if necessary). Clone this repo.
 
@@ -40,7 +44,7 @@ Step 4. Run the container you just built.
 docker run --rm -v $(pwd):/home/rstudio/work -e PASSWORD=bios611 -p 8787:8787 -it project
 ```
 
-Step 5. Open your preferred internet browser, and goto https://localhost:8787. Fill in `rstudio` for Username and the `bios611` for Password. You are now in the rstudio mirrored in a docker container. 
+Step 5. Open your preferred internet browser, and go to https://localhost:8787. Sign in with Username `rstudio` and Password `bios611`. You are now signed in the rstudio mirrored in a docker container. 
 
 ## How to Build the Report
 
