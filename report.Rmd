@@ -37,4 +37,27 @@ In data_merge.R, I merged (inner-join) the two preprocessed datasets by album, s
 
 # Visualization and Analysis
 
+## Pop vs. Rock
+
+First, I make some overlaid density plots comparing distributions of adjusted, critic only, and user only scores between pop and rock albums. 
+
 ![](./figures/poprock.png){width=100%}
+
+In general, the distributions under all settings are similar in shape. This means pop and rock albums are similarly received in general. 
+
+For AOTY, all adjusted, critic, and user scores peaked at around 75 for both pop and rock albums. 
+
+For Metacritic, pop and rock albums have similar distributions, however, it appears that users tend to give higher scores to albums compared to critics. I explore this nuance by making more overlaid density plots, this time focusing on comparing the critic scores and user scores.
+
+## Critic vs User
+
+![](./figures/criticuser.png){width=100%}
+
+The Metacritic plots confirms the difference between critic and user scores for both pop and rock albums in a similar fashion. Metacritic users tend to give higher scores to albums compared to Metacritic critics. It is interesting that AOTY data does not display the same pattern. This may have to do with the differing targeted audience between the two media sites. 
+
+It is worth noting that for AOTY, users tend give more consistent scores compared to critics, as evident in the taller peak, skinner peak. This may be because the users are more easily influenced by other users' reviews and ratings, explained by the herd behavior.
+
+## Scores Through the Years
+
+
+
