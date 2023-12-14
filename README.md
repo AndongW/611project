@@ -62,13 +62,15 @@ Step 3. Build the report. This should automatically build all artifacts the repo
 make report.html
 ```
 
-Step 4. To build artifacts specifically, execute the same command as the one in Step 3, just replacing `report.html` with the artifact path. For example, to build the first plot in the report, execute the following. 
+Step 4. To view the report, locate and click the `report.html` file and choose "View in Web Browser".
+
+(Step 5.) To build artifacts specifically, execute the same command as the one in Step 3, just replacing `report.html` with the artifact path. For example, to build the first plot in the report, execute the following. 
 
 ```
 make figures/poprock.png
 ```
 
-Step 5. To start over, repeat Step 1 to clean the environment. 
+(Step 6.) To start over, repeat Step 1 to clean the environment. 
 
 ## Try-Catch
 
