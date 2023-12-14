@@ -33,7 +33,7 @@ In rate_data_prep.R, I preprocessed the album ratings data. I removed duplicate 
 
 In rev_data_prep.R, I first combined test and train sets of the album reviews data. I then removed the text field and reception variable, and any duplicate albums-media source parings, to prepare for pivoting the data. Then, I pivoted the data wider, so that each row of the transformed dataset represents one distinct album and has information on the album's ratings from each source (NA for a specific source variable, if the album did not recieve rating from that source). In the end, the dataset has 133 columns, even though columns represented by the not-so-popular media sources are mostly empty. 
 
-In data_merge.R, I merged (inner-join) the two preprocessed datasets by album, specifically album title and artist name. 
+In data_merge.R, I merged (inner-join) the two preprocessed datasets by album, specifically album title and artist name. Then I created a composite score variable that takes average of the adjusted Metacritic and AOTY scores and all the available ratings scores from media sources for each album. 
 
 # Visualization and Analysis
 
@@ -59,5 +59,16 @@ It is worth noting that for AOTY, users tend give more consistent scores compare
 
 ## Scores Through the Years
 
+Beside comparing pop and rock albums receptions, I am interested to see how the distribution of album ratings have evolved through time. So I made side-by-side boxplots for the distribution of composite score by release year of albums. 
+
+![](./figures/popyear.png){width=50%}
+
+![](./figures/rockyear.png){width=50%}
+
+Both pop and rock genre have experience a similar progression of reception throughout the past two decades. From 2000 to 2010, there is a slight decrease in reception for both pop and rock albums, the decrease is more prominent in rock albums. From 2010 to 2020, there is a steady increase in reception for both pop and rock albums. This may be due to the rise in popularity of electronic music around 2010, and a shift in attention away from electronic music after 2015 as hip hop dramatically increase in popularity. Note: Hip hop is categorized as pop and electronic music is categorized as neither pop or rock in our analysis. 
+
+## Release Calendar Heatmap
+
+I am also interested to find out if there is a pattern in the time of release for albums. So, I made heatmaps based on the number of album releases on each day of a calendar year. 
 
 
