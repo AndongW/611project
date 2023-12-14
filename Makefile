@@ -38,3 +38,12 @@ figures/popyear.png figures/rockyear.png figures/popheat.png figures/rockheat.pn
 				Rscript year.R
 				
 # Report Generation
+report.html: \
+				report.Rmd \
+				figures/criticuser.png \
+				figures/poprock.png \
+				figures/popyear.png \
+				figures/rockyear.png \
+				figures/popheat.png \
+				figures/rockheat.png
+				Rscript report.Rmd
