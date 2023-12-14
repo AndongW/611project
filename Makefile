@@ -46,4 +46,4 @@ report.html: \
 				figures/rockyear.png \
 				figures/popheat.png \
 				figures/rockheat.png
-				Rscript report.Rmd
+				Rscript -e 'rmarkdown::render("report.Rmd")'

@@ -27,5 +27,14 @@ The album reviews data have 6 variables, including information on album title, a
 
 # Data Preprocessing
 
-For my analysis, I used both album ratings data and album reviews data. I did not use the text data from the album reviews data, which I will explain in the Future Steps section. 
+For my analysis, I used both album ratings data and album reviews data. Here is a brief overview of what I did to prepare the data for analysis. 
+
+In rate_data_prep.R, I preprocessed the album ratings data. I removed duplicate album entries. Then, I categorized the albums into "Pop", "Rock", and "Neither" based on their genre. Then, I created an adjusted score for each of Metacritic and AOTY, by combining the critic scores and user scores with weights based on the number of critic reviews and user reviews. 
+
+In rev_data_prep.R, I first combined test and train sets of the album reviews data. I then removed the text field and reception variable, and any duplicate albums-media source parings, to prepare for pivoting the data. Then, I pivoted the data wider, so that each row of the transformed dataset represents one distinct album and has information on the album's ratings from each source (NA for a specific source variable, if the album did not recieve rating from that source). In the end, the dataset has 133 columns, even though columns represented by the not-so-popular media sources are mostly empty. 
+
+In data_merge.R, I merged (inner-join) the two preprocessed datasets by album, specifically album title and artist name. 
+
+# Visualization and Analysis
+
 
