@@ -32,7 +32,6 @@ p1 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("Metacritic Adjusted Score: Pop vs. Rock") +
   theme_minimal()
-p1
 
 # Plot AOTY Adjusted Score: Pop vs. Rock
 df_p2 <- data.frame(
@@ -53,7 +52,6 @@ p2 <-
   scale_y_continuous(name = "Density") +
   ggtitle("AOTY Adjusted Score: Pop vs. Rock") +
   theme_minimal()
-p2
 
 # Plot Metacritic Critic Score
 df_p3 <- data.frame(
@@ -74,7 +72,6 @@ p3 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("Metacritic Critic Score: Pop vs. Rock") +
   theme_minimal()
-p3
 
 # Plot AOTY Critic Score
 df_p4 <- data.frame(
@@ -95,7 +92,6 @@ p4 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("AOTY Critic Score: Pop vs. Rock") +
   theme_minimal()
-p4
 
 # Plot Metacritic User Score
 df_p5 <- data.frame(
@@ -116,7 +112,6 @@ p5 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("Metacritic User Score: Pop vs. Rock") +
   theme_minimal()
-p5
 
 # Plot AOTY User Score
 df_p6 <- data.frame(
@@ -137,7 +132,6 @@ p6 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("AOTY User Score: Pop vs. Rock") +
   theme_minimal()
-p6
 
 # Combine plots in one grid
 p_grid1 <- ggarrange(p1,p2,p3,p4,p5,p6,ncol = 2,nrow = 3,common.legend = TRUE, legend="bottom")
@@ -162,7 +156,6 @@ p7 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("Pop: Metacritic Critic vs. User") +
   theme_minimal()
-p7
 
 # Rock: meta critic vs user
 df_p8 <- data.frame(
@@ -183,7 +176,6 @@ p8 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("Rock: Metacritic Critic vs. User") +
   theme_minimal()
-p8
 
 # Pop: aoty critic vs user
 df_p9 <- data.frame(
@@ -204,7 +196,6 @@ p9 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("Pop: AOTY Critic vs. User") +
   theme_minimal()
-p9
 
 # Rock: aoty critic vs user
 
@@ -226,7 +217,6 @@ p0 <-
   scale_y_continuous(name = "Density") + 
   ggtitle("Rock: AOTY Critic vs. User") +
   theme_minimal()
-p0
 
 # Combine plots in one grid
 p_grid2 <- ggarrange(p7,p9,p8,p0, ncol = 2,nrow = 2,common.legend = TRUE, legend="bottom")
