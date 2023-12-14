@@ -2,14 +2,8 @@
 library(tidyverse)
 library(ggpubr)
 
-
 # Read data
 albums <- read_csv("./data/album.csv")
-
-# Make composite score based on all scores
-composite_score <- rowMeans(albums[, 20:152], na.rm = TRUE)
-albums <- albums %>%
-  mutate(composite_score = composite_score)
 
 # Plot pop albums composite scores by year
 pop <- albums %>%

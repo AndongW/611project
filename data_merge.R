@@ -14,5 +14,10 @@ rev_merge <- rev %>%
 albums <-  inner_join(rate_merge,rev_merge, by = "AT") %>%
   select(-AT)
 
+# Make composite score based on all scores
+composite_score <- rowMeans(albums[, 20:152], na.rm = TRUE)
+albums <- albums %>%
+  mutate(composite_score = composite_score)
+
 # Export data
 write_csv(albums,"./data/album.csv")
