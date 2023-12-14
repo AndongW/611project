@@ -9,11 +9,10 @@ date: "`r Sys.Date()`"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-/  
 
 # Data Description
 
-The datasets used in this analysis come from the following kaggle page:
+The datasets used in this analysis are downloaded from the following kaggle page:
 
 https://www.kaggle.com/datasets/kauvinlucas/30000-albums-aggregated-review-ratings
 
@@ -24,6 +23,7 @@ There are three original data files, including album_ratings.csv (I will refer t
 The album ratings data have 16 variables, including information on album title, artist name, release date, format, label company name, genre, and numerical ratings and numbers of reviews from both critics and users on Metacritic (www.metacritic.com) and AOTY (www.albumoftheyear.org), which are both reputable and popular platforms for music critics and music consumers to share their ratings and reviews on albums. The album ratings data has more than 30,000 albums recorded, however, some albums have missing information for certain variables. 
 
 The album reviews data have 6 variables, including information on album title, artist name, media source of rating/review, numeric rating and textual review given by the media, and the reception classification of the album, which simply categorizes the numerical ratings into 5 strata: Acclaim (81-100), Favorable (61-80), Mixed (41-60), Unfavorable (21-40), and Dislike (0-20). Some of the most popular media sources from the album reviews are: Allmusic, Pitchfork, Popmatters, Uncut, Q magazine, etc. The album reviews data has recorded more than 166,000 album-media source parings, however, no media source have reviewed all the albums. 
+
 
 # Data Preprocessing
 
@@ -37,4 +37,4 @@ In data_merge.R, I merged (inner-join) the two preprocessed datasets by album, s
 
 # Visualization and Analysis
 
-
+![](./figures/poprock.png){width=100%}

@@ -5,6 +5,7 @@ PHONY: clean
 clean:
 			  rm data/*
 			  rm figures/*
+			  rm report.html
 			  
 # Data Preprocessing
 
@@ -27,7 +28,7 @@ data/album.csv: \
 
 # Figures Generation
 
-figures/criticuser.png figures/poprock.png: \
+figures/poprock.png figures/criticuser.png: \
 				critic_user.R \
 				data/album.csv 
 				Rscript critic_user.R
@@ -38,10 +39,11 @@ figures/popyear.png figures/rockyear.png figures/popheat.png figures/rockheat.pn
 				Rscript year.R
 				
 # Report Generation
+
 report.html: \
 				report.Rmd \
-				figures/criticuser.png \
 				figures/poprock.png \
+				figures/criticuser.png \
 				figures/popyear.png \
 				figures/rockyear.png \
 				figures/popheat.png \
